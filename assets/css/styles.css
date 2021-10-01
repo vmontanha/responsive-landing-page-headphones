@@ -1,4 +1,6 @@
 /*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -68,7 +70,6 @@ html {
 
 body {
   font-family: var(--body-font);
-  font-size: var(--normal-font-size);
   background-color: #FFF;
   color: var(--text-color);
 }
@@ -139,7 +140,7 @@ img {
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 85vh;
+  height: 80vh;
 }
 
 .home__img {
@@ -164,11 +165,12 @@ img {
 
 
 .home__title-description {
-  font-weight: 100;
+  font-weight: 300;
   margin-bottom: var(--mb-1);
   color: #FFF;
   text-align: center;
   margin-top: 70px;
+  font-size: 32px;
 }
 
 .home__description {
@@ -177,6 +179,7 @@ img {
   line-height: var(--text-line-height);
   color: #FFF;
   text-align: center;
+  font-weight: 300;
 }
 
 /* =============== BUTTONS ===============
@@ -204,18 +207,41 @@ img {
 } */
 
 /*=============== SPONSOR ===============*/
+.sponsor {
+  background-color: #FFF;
+}
 .sponsor__img {
   width: 90px;
 }
-
 .sponsor__container {
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  row-gap: 5rem;
-  justify-items: center;
+  display: flex;
+  justify-items: flex-start;
   align-items: center;
+  flex-direction: row;
+  align-content: stretch;
+  justify-content: space-between;
+  padding-bottom: 1rem;
 }
-
+#margin-img {
+  margin-right: 2rem;
+}
+.sponsor__content h1{
+  color: #5F3987 !important;
+  font-size: 40px;
+  font-weight: 300;
+}
+.sponsor__content h4{
+  color: #5F3987 !important;
+  font-size: 20px;
+  font-weight: 300;
+}
+.sponsor__content {
+  width: 100%;
+}
 /*=============== SPECS ===============*/
+.specs {
+  background-color: #333;
+}
 .specs__container {
   position: relative;
 }
@@ -492,11 +518,10 @@ img {
     grid-template-columns: .8fr 1fr;
   }
   .home__data {
-    padding-top: 2rem;
+    padding-top: 10rem;
   }
   .home__img {
-    top: -7rem;
-    left: 0;
+    display: none;
   }
   .specs__img {
     position: initial;
@@ -530,9 +555,13 @@ img {
     grid-template-columns: repeat(3, 142px);
     justify-content: center;
   }
+
+  .home__description,.home__title-description {
+    display: none !important;
+  }
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 767px) and (max-width: 1023px){
   body {
     margin: 0;
   }
@@ -544,11 +573,7 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
   .home__img {
-    top: -9rem;
-    left: 4rem;
-  }
-  .home__description,.home__title-description {
-    display: none !important;
+    display: none;
   }
   .home__data {
     padding-top: 8rem;
@@ -604,6 +629,7 @@ img {
   .home__img {
     width: 300px;
     top: -15rem;
+    display: block;
   }
   .home__title {
     top: -5rem;
@@ -627,5 +653,14 @@ img {
 }
 
 @media screen and (max-width: 570px) {
-  
+  .home__img {
+    display: none;
+  }
+  #home {
+    background-image: url("../img/hero.svg");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
 }
